@@ -1,0 +1,119 @@
+{
+  "name": "airbird-bt",
+  "slug": "airbird-bt",
+  "version": "2.0.15",
+  "orientation": "portrait",
+  "icon": "./assets/icon/icon-airbird.png",
+  "scheme": "myapp",
+  "userInterfaceStyle": "automatic",
+  "newArchEnabled": true,
+  "runtimeVersion": "1",
+  "updates": {
+    "enabled": true,
+    "fallbackToCacheTimeout": 0
+  },
+  "ios": {
+    "userInterfaceStyle": "automatic",
+    "supportsTablet": true,
+    "icon": {
+      "light": "./assets/icon/icon-airbird.png",
+      "dark": "./assets/icon/icon-airbird.png",
+      "tinted": "./assets/icon/icon-airbird.png"
+    },
+    "bundleIdentifier": "com.leapcraft.airbird",
+    "infoPlist": {
+      "NSLocalNetworkUsageDescription": "The app requires access to the local network so it can..."
+    }
+  },
+  "android": {
+    "userInterfaceStyle": "automatic",
+    "adaptiveIcon": {
+      "foregroundImage": "./assets/icon/drawable-land-xxxhdpi-screen.png",
+      "backgroundColor": "#f9f543"
+    },
+    "package": "com.leapcraft.airbird",
+    "permissions": [
+      "android.permission.CAMERA",
+      "android.permission.RECORD_AUDIO",
+      "android.permission.BLUETOOTH",
+      "android.permission.BLUETOOTH_ADMIN",
+      "android.permission.BLUETOOTH_CONNECT"
+    ]
+  },
+  "web": {
+    "bundler": "metro",
+    "output": "static",
+    "favicon": "./assets/images/favicon.png"
+  },
+  "plugins": [
+    "expo-router",
+    [
+      "expo-splash-screen",
+      {
+        "image": "./assets/splash/splash-airbird.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#f9f543"
+      }
+    ],
+    [
+      "expo-video",
+      {
+        "supportsBackgroundPlayback": true,
+        "supportsPictureInPicture": true
+      }
+    ],
+    [
+      "expo-camera",
+      {
+        "cameraPermission": "Allow AirBird to access your camera"
+      }
+    ],
+    [
+      "expo-build-properties",
+      {
+        "android": {
+          "usesCleartextTraffic": true
+        },
+        "ios": {}
+      }
+    ],
+    [
+      "react-native-ble-plx",
+      {
+        "isBackgroundEnabled": true,
+        "modes": [
+          "peripheral",
+          "central"
+        ],
+        "bluetoothAlwaysPermission": "Allow Airbird to connect to bluetooth devices"
+      }
+    ],
+    [
+      "react-native-wifi-reborn",
+      {
+        "fineLocationPermission": false
+      }
+    ],
+    "expo-secure-store"
+  ],
+  "experiments": {
+    "typedRoutes": true
+  },
+  "extra": {
+    "router": {
+      "origin": false
+    },
+    "eas": {
+      "projectId": "893a7982-1126-4cad-94b6-26411b660d3f"
+    }
+  },
+  "sdkVersion": "52.0.0",
+  "platforms": [
+    "ios",
+    "android",
+    "web"
+  ],
+  "androidStatusBar": {
+    "backgroundColor": "#f9f543"
+  }
+}
